@@ -22,3 +22,59 @@ This file collects ideas for the upcoming ESP32 TMC5240 library built on top of 
 - Add CMake/Arduino build support for ESP32
 - Write documentation and usage instructions in the README
 
+## TMC-API functions
+- `tmc5240_readRegister(icID, address)` - read raw register
+- `tmc5240_writeRegister(icID, address, value)` - write raw register
+- `tmc5240_rotateMotor(icID, motor, velocity)` - set motor velocity
+- `tmc5240_fieldRead(icID, field)` - read an individual register field
+- `tmc5240_fieldWrite(icID, field, value)` - update a register field
+- `tmc5240_fieldExtract(data, field)` - extract field from data
+- `tmc5240_fieldUpdate(data, field, value)` - modify field in place
+- `tmc5240_readWriteSPI(icID, *data, length)` - SPI transfer callback
+- `tmc5240_readWriteUART(icID, *data, writeLen, readLen)` - UART transfer callback
+- `tmc5240_getBusType(icID)` - get active bus
+- `tmc5240_getNodeAddress(icID)` - get node address for UART
+- `tmc_ramp_init(ramp, type)` - initialize generic ramp
+- `tmc_ramp_compute(ramp, type, delta)` - update ramp step
+- `tmc_ramp_get_rampVelocity(ramp, type)` - current ramp velocity
+- `tmc_ramp_get_rampPosition(ramp, type)` - current ramp position
+- `tmc_ramp_set_enabled(ramp, type, enabled)` - enable or disable ramp
+- `tmc_ramp_get_enabled(ramp, type)` - check if ramp is enabled
+- `tmc_ramp_toggle_enabled(ramp, type)` - toggle ramp state
+- `tmc_ramp_linear_init(linearRamp)` - configure linear ramp defaults
+- `tmc_ramp_linear_compute(linearRamp)` - run linear ramp state machine
+- `tmc_ramp_linear_compute_velocity(linearRamp)` - velocity ramp update
+- `tmc_ramp_linear_compute_position(linearRamp)` - position ramp update
+- `tmc_ramp_linear_set_enabled(linearRamp, enabled)` - enable linear ramp
+- `tmc_ramp_linear_set_maxVelocity(linearRamp, maxVelocity)` - set max velocity
+- `tmc_ramp_linear_set_targetPosition(linearRamp, targetPosition)` - set target position
+- `tmc_ramp_linear_set_rampPosition(linearRamp, rampPosition)` - set ramp position
+- `tmc_ramp_linear_set_targetVelocity(linearRamp, targetVelocity)` - set target velocity
+- `tmc_ramp_linear_set_rampVelocity(linearRamp, rampVelocity)` - set current ramp velocity
+- `tmc_ramp_linear_set_acceleration(linearRamp, acceleration)` - set acceleration
+- `tmc_ramp_linear_set_mode(linearRamp, mode)` - position or velocity mode
+- `tmc_ramp_linear_set_precision(linearRamp, precision)` - calculation precision
+- `tmc_ramp_linear_set_homingDistance(linearRamp, distance)` - homing distance
+- `tmc_ramp_linear_set_stopVelocity(linearRamp, velocity)` - stop velocity limit
+- `tmc_ramp_linear_get_enabled(linearRamp)` - current enable state
+- `tmc_ramp_linear_get_maxVelocity(linearRamp)` - get max velocity
+- `tmc_ramp_linear_get_targetPosition(linearRamp)` - get target position
+- `tmc_ramp_linear_get_rampPosition(linearRamp)` - get ramp position
+- `tmc_ramp_linear_get_targetVelocity(linearRamp)` - get target velocity
+- `tmc_ramp_linear_get_rampVelocity(linearRamp)` - get ramp velocity
+- `tmc_ramp_linear_get_acceleration(linearRamp)` - get acceleration
+- `tmc_ramp_linear_get_state(linearRamp)` - ramp state machine status
+- `tmc_ramp_linear_get_mode(linearRamp)` - ramp mode
+- `tmc_ramp_linear_get_precision(linearRamp)` - current precision
+- `tmc_ramp_linear_get_acceleration_limit(linearRamp)` - acceleration limit
+- `tmc_ramp_linear_get_velocity_limit(linearRamp)` - velocity limit
+- `tmc_ramp_linear_get_homingDistance(linearRamp)` - get homing distance
+- `tmc_ramp_linear_get_stopVelocity(linearRamp)` - get stop velocity
+- `tmc_limitInt(value, min, max)` - clamp 32-bit integer
+- `tmc_limitS64(value, min, max)` - clamp 64-bit integer
+- `tmc_sqrti(x)` - integer square root
+- `tmc_filterPT1(akku, newValue, lastValue, actualFilter, maxFilter)` - simple PT1 filter
+- `tmc_fillCRC8Table(polynomial, isReflected, index)` - build CRC table
+- `tmc_CRC8(data, bytes, index)` - compute CRC8 value
+- `tmc_tableGetPolynomial(index)` - fetch polynomial of CRC table
+- `tmc_tableIsReflected(index)` - query table reflection flag
