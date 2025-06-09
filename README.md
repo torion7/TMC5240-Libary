@@ -1,1 +1,13 @@
 # TMC5240-Libary
+
+This repository aims to provide a dedicated ESP32 library for interfacing with the TMC5240 stepper motor driver. The implementation will rely on the official **TMC-API** and will expose Arduino style C++ classes for easy integration in ESP32 projects.
+
+## Goals
+- Wrap the TMC-API to provide simple initialization and configuration helpers for the TMC5240
+- Allow reading and writing of all driver registers
+- Provide high level movement commands (e.g. position and velocity control)
+- Offer simple status and diagnostics functions
+- Include usage examples targeting the ESP32 toolchain
+
+The project currently contains only notes and collected documentation. See the `To Do` file for the planned feature list.
+

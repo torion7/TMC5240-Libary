@@ -1,1 +1,24 @@
+# To Do
+
+This file collects ideas for the upcoming ESP32 TMC5240 library built on top of the TMC-API. These points describe the planned functionality.
+
+## Core functions
+- `begin()` - initialize SPI/I2C interfaces and the TMC5240 driver
+- `configureDriver()` - apply default configuration parameters
+- `setMotorCurrent(mA)` - adjust motor current limits
+- `setMicrosteps(steps)` - configure microstep resolution
+- `enableDriver()` / `disableDriver()` - control the enable pin
+- `moveTo(targetPosition)` - absolute positioning
+- `moveBy(deltaSteps)` - relative positioning
+- `setVelocity(velocity)` - set target velocity
+- `stop()` - quick stop the motor
+- `readRegister(address)` / `writeRegister(address, value)` - low level register access
+- `getPosition()` - read the actual position counter
+- `getStatus()` - fetch driver status and error flags
+- `checkErrors()` - convenience function to query fault conditions
+
+## Other tasks
+- Provide examples demonstrating basic motion, configuration and diagnostics
+- Add CMake/Arduino build support for ESP32
+- Write documentation and usage instructions in the README
 
