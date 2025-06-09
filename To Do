@@ -1,9 +1,10 @@
 # To Do
 
 This file collects ideas for the upcoming ESP32 TMC5240 library built on top of the TMC-API. These points describe the planned functionality.
+The initial implementation will communicate with the driver exclusively via SPI. UART support is currently not planned.
 
 ## Core functions
-- `begin()` - initialize SPI/I2C interfaces and the TMC5240 driver
+- `begin()` - initialize the SPI interface and the TMC5240 driver (UART is not planned)
 - `configureDriver()` - apply default configuration parameters
 - `setMotorCurrent(mA)` - adjust motor current limits
 - `setMicrosteps(steps)` - configure microstep resolution
@@ -31,9 +32,9 @@ This file collects ideas for the upcoming ESP32 TMC5240 library built on top of 
 - `tmc5240_fieldExtract(data, field)` - extract field from data
 - `tmc5240_fieldUpdate(data, field, value)` - modify field in place
 - `tmc5240_readWriteSPI(icID, *data, length)` - SPI transfer callback
-- `tmc5240_readWriteUART(icID, *data, writeLen, readLen)` - UART transfer callback
+- `tmc5240_readWriteUART(icID, *data, writeLen, readLen)` - UART transfer callback (not used in this library)
 - `tmc5240_getBusType(icID)` - get active bus
-- `tmc5240_getNodeAddress(icID)` - get node address for UART
+- `tmc5240_getNodeAddress(icID)` - get node address for UART (unused)
 - `tmc_ramp_init(ramp, type)` - initialize generic ramp
 - `tmc_ramp_compute(ramp, type, delta)` - update ramp step
 - `tmc_ramp_get_rampVelocity(ramp, type)` - current ramp velocity
