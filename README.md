@@ -8,6 +8,7 @@ This repository aims to provide a dedicated ESP32 library for interfacing with t
 - Provide high level movement commands (e.g. position and velocity control)
 - Offer simple status and diagnostics functions
 - Include usage examples targeting the ESP32 toolchain
+- Support controlling multiple motors simultaneously using separate configuration files so the main application code stays minimal
 
 At this stage the library focuses solely on SPI communication with the driver. UART mode is not supported yet.
 
