@@ -1,16 +1,16 @@
 # TMC5240-Libary
 
-This repository aims to provide a dedicated ESP32 library for interfacing with the TMC5240 stepper motor driver **via SPI**. The implementation will rely on the official **TMC-API** and will expose Arduino style C++ classes for easy integration in ESP32 projects. Support for UART communication is currently out of scope.
+Dieses Repository soll eine dedizierte ESP32-Bibliothek bereitstellen, mit der der TMC5240-Schrittmotortreiber **über SPI** angesteuert werden kann. Die Implementierung basiert auf der offiziellen **TMC-API** und stellt Arduino-ähnliche C++-Klassen für eine einfache Integration in ESP32-Projekte bereit. Unterstützung für die UART-Kommunikation ist derzeit nicht vorgesehen.
 
-## Goals
-- Wrap the TMC-API to provide simple initialization and configuration helpers for the TMC5240 over SPI
-- Allow reading and writing of all driver registers
-- Provide high level movement commands (e.g. position and velocity control)
-- Offer simple status and diagnostics functions
-- Include usage examples targeting the ESP32 toolchain
-- Support controlling multiple motors simultaneously using separate configuration files so the main application code stays minimal
+## Ziele
+- Die TMC-API umschließen, um einfache Initialisierungs- und Konfigurationshilfen für den TMC5240 über SPI bereitzustellen
+- Das Lesen und Schreiben aller Treiberregister ermöglichen
+- Hochwertige Bewegungsbefehle anbieten (z.\u00a0B. Positions- und Geschwindigkeitsregelung)
+- Einfache Status- und Diagnosefunktionen bereitstellen
+- Beispiele f\u00fcr die Nutzung mit der ESP32-Toolchain enthalten
+- Die gleichzeitige Ansteuerung mehrerer Motoren unterst\u00fctzen, wobei separate Konfigurationsdateien verwendet werden, damit der Hauptanwendungscode schlank bleibt
 
-At this stage the library focuses solely on SPI communication with the driver. UART mode is not supported yet.
+In dieser Phase konzentriert sich die Bibliothek ausschlie\u00dflich auf die SPI-Kommunikation mit dem Treiber. Der UART-Modus wird noch nicht unterst\u00fctzt.
 
-The project currently contains only notes and collected documentation. See the `To Do` file for the planned feature list.
+Das Projekt enth\u00e4lt derzeit nur Notizen und gesammelte Dokumentation. Die geplante Funktionsliste befindet sich in der Datei `To Do`.
 
